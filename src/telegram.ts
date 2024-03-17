@@ -1,4 +1,5 @@
 import { Env, webhookPath } from "./env";
+import { claude } from "./claude";
 
 interface From {
     id: number
@@ -28,10 +29,11 @@ export async function handleMessage(env: Env, msg: WebhookMessage) {
     if (env.ALLOW_USERS.indexOf(msg.message.from.id) === -1) {
         return;
     }
+    const reply = await claude(msg.message.text, env);
     const url = `https://api.telegram.org/bot${env.TELEGRAM_BOT_TOKEN}/sendMessage`;
     const params = {
         chat_id: msg.message.chat.id,
-        text: msg.message.text, // FIXME: echo back now
+        text: reply,
         reply_parameters: {
             message_id: msg.message.message_id,
         }
