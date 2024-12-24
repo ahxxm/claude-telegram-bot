@@ -2,7 +2,7 @@ import { Env } from "./env";
 import Anthropic from '@anthropic-ai/sdk';
 
 // common emotion blackmail prompt as system prompt
-const models = new Set<String>(["claude-3-sonnet-20240229", "claude-3-opus-20240229", "claude-3-haiku-20240307"]);
+const models = new Set<String>(["claude-3-5-sonnet-20241022", "claude-3-5-haiku-20241022", "claude-3-sonnet-20240229", "claude-3-opus-20240229", "claude-3-haiku-20240307"]);
 const INIT_MESSAGE = `think step by step
 use succint language unless explicitly asked
 use common sense as well as critical thinking
