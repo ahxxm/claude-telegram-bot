@@ -6,6 +6,7 @@ const models = new Set<String>(["claude-3-5-sonnet-20241022", "claude-3-5-haiku-
 const INIT_MESSAGE = `think step by step
 use succint language unless explicitly asked
 use common sense as well as critical thinking
+provide self-contained answer
 be casual
 be opinionated
 be sincere, don't tell the average bullshit
